@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/voz-territorio/static/css/main.d4709c7c.chunk.css",
+    "main.js": "/voz-territorio/static/js/main.7f5cf346.chunk.js",
+    "main.js.map": "/voz-territorio/static/js/main.7f5cf346.chunk.js.map",
+    "runtime~main.js": "/voz-territorio/static/js/runtime~main.26685c72.js",
+    "runtime~main.js.map": "/voz-territorio/static/js/runtime~main.26685c72.js.map",
+    "static/js/2.88273e26.chunk.js": "/voz-territorio/static/js/2.88273e26.chunk.js",
+    "static/js/2.88273e26.chunk.js.map": "/voz-territorio/static/js/2.88273e26.chunk.js.map",
+    "index.html": "/voz-territorio/index.html",
+    "precache-manifest.e1fca28ebb50e267be8340b180a05a97.js": "/voz-territorio/precache-manifest.e1fca28ebb50e267be8340b180a05a97.js",
+    "service-worker.js": "/voz-territorio/service-worker.js",
+    "static/css/main.d4709c7c.chunk.css.map": "/voz-territorio/static/css/main.d4709c7c.chunk.css.map"
+  }
+}
