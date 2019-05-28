@@ -1,7 +1,7 @@
 {
   "name": "voz-territorio",
   "version": "0.1.0",
-  "homepage": "http://ctrlequi.github.io/voz-territorio",
+  "homepage": "https://ctrlequi.github.io/voz-territorio",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.1",
