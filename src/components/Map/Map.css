@@ -1,0 +1,16 @@
+#map-container {
+  width: 99vw;
+  height: 99vh;
+  margin: auto;
+}
+
+#map-container .mapboxgl-canvas {
+  left: 0;
+}
+
+#map-container .marker {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(155, 193, 228);
+  border-radius: 50%;
+}
