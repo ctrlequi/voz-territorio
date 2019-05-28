@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c93f5e560a30057ec4609a67a31b10e",
+    "revision": "aa769abc5a7a8e0c48a872f7e2fd8c10",
     "url": "/voz-territorio/index.html"
   },
   {
-    "revision": "71c578d968942c4af497",
+    "revision": "3324f0ff2ccc20d98e97",
     "url": "/voz-territorio/static/css/main.d4709c7c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voz-territorio/static/js/2.c8995290.chunk.js"
   },
   {
-    "revision": "71c578d968942c4af497",
-    "url": "/voz-territorio/static/js/main.b63e2162.chunk.js"
+    "revision": "3324f0ff2ccc20d98e97",
+    "url": "/voz-territorio/static/js/main.7f66522e.chunk.js"
   },
   {
     "revision": "adc4a36802fe19f293bc",
