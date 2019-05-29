@@ -1,6 +1,6 @@
 #map-container {
   width: 99vw;
-  height: 99vh;
+  height: calc(99vh - 50px);
   margin: auto;
 }
 

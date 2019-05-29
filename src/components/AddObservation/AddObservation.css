@@ -1,0 +1,11 @@
+.AddObservation {
+  text-align: left;
+}
+
+.AddObservation .small {
+  width: 50px;
+}
+
+.AddObservation img {
+  height: 200px;
+}

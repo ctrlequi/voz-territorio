@@ -1,14 +1,16 @@
 import React, { Component } from "react"
 
 import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 
 import RegisterView from './RegisterView'
 
 class Register extends Component {
 
   state = {
-    name: null,
-    newId: null
+    name: '',
+    newId: null,
+    redirect: false
   }
   
   componentDidMount () {
@@ -37,6 +39,7 @@ class Register extends Component {
   }
   
   render() {
+    if (this.state.redirect) return <Redirect to="/"/>
     const props = {
       name: this.state.name,
       onNameChange: this.handleNameChange,

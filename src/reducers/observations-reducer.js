@@ -1,15 +1,22 @@
-function observations (state = [], action) {
+import defaultObservations from '../data/observations'
+
+function observations (state = defaultObservations, action) {
   console.log('state observations', state)
 
   switch (action.type) {
     case 'ADD_OBSERVATION':
       
       const newObservation = {
-        observationId: action.id,
-        userId: action.userId,
-        coordinates: action.coordinates,
+        title: action.title,
+        lat: action.lat,
+        lng: action.lng,
         date: action.date,
-        title: action.title
+        hour: action.hour,
+        tags: action.tags,
+        imageUrl: action.imageUrl,
+        videoUrl: action.videoUrl,
+        imageFile: action.imageFile,
+        observationContents: action.observationContents
       }
       return [...state, newObservation]
       
