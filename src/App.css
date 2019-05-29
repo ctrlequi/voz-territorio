@@ -5,4 +5,10 @@
 .App header {
   position: fixed;
   z-index: 9999;
+  top: 0;
 }
+
+.App .Container {
+  margin-top: 50px;
+}
+
