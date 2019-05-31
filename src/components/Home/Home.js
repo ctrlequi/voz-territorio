@@ -22,6 +22,7 @@ class Home extends Component {
         className="myClassname"
         display="initial"
         position="relative"
+        autoplay={true}
       />
     </div>
   }
