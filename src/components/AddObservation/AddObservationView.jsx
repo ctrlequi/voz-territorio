@@ -95,9 +95,9 @@ const AddObservationView = (props) => {
           <div>
             Ubicación: 
             <div>
-              lat: <input className="small" name="lat" type="text" onChange={onFieldChange}/>
+              lat: <input className="small" name="lat" type="text" onChange={onFieldChange} value={lat}/>
               &nbsp;
-              lng: <input className="small" name="lng" type="text" onChange={onFieldChange}/>    
+              lng: <input className="small" name="lng" type="text" onChange={onFieldChange} value={lng}/>    
             </div>
             <div>
               <button onClick={onSetMyLocation}>Mi ubicación actual</button>

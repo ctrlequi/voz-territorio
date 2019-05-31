@@ -33,6 +33,15 @@ class AddObservation extends Component {
     
   }
   handleSetMyLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(pos => {
+        console.log('mylocation',pos)
+        this.setState({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+        })
+      });
+    }
     console.log('setMyLocation')
     
   }
