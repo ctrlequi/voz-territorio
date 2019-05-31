@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Iframe from 'react-iframe'
 
 import HomeView from './HomeView'
 
@@ -13,8 +14,18 @@ class Home extends Component {
   }
   
   render() {
-    return <HomeView/>
+    return <div className="Home">
+      <Iframe url="https://ralexrdz.github.io/mongoose-intro/"
+        width="100%"
+        height="100%"
+        id="myId"
+        className="myClassname"
+        display="initial"
+        position="relative"
+      />
+    </div>
   }
 }
 
 export default Home
+

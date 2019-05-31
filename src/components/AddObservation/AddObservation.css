@@ -1,5 +1,11 @@
 .AddObservation {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddObservation * {
+  max-width: 500px;
 }
 
 .AddObservation .small {

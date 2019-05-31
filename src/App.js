@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Map from "./components/Map/Map";
 import AddObservation from './components/AddObservation/AddObservation';
 import Register from './components/Register/Register';
+import ObservationDetail from './components/ObservationDetail/ObservationDetail';
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
             <Route exact path="/map" component={Map}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/add-observation" component={AddObservation}/>
+            <Route exact path="/observations/:id" component={ObservationDetail}/>
           </Switch>
         </section>
       </div>

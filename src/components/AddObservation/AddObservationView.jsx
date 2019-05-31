@@ -9,6 +9,7 @@ const AddObservationView = (props) => {
     lng,
     date,
     hour,
+    min,
     observationContents,
     onAddObservation,
     onFieldChange,
@@ -79,42 +80,56 @@ const AddObservationView = (props) => {
             Titulo: <input name="title" type="text" onChange={onFieldChange}/>
           </div>
           <div>
-            Fecha: <input name="date" type="date" onChange={onFieldChange} lang="es"/> 
-            Hora: <input className="small" name="hour" type="number" onChange={onFieldChange}/> 
-            Minuto: <input className="small" name="min" type="number" onChange={onFieldChange}/> 
-            <button onClick={onSetDateNow}>Hoy</button>
+            <div>
+              Fecha: <input name="date" type="date" onChange={onFieldChange} lang="es"/> 
+            </div>
+            <div>
+              Hora: <input className="small" name="hour" type="number" onChange={onFieldChange}/> 
+              Minuto: <input className="small" name="min" type="number" onChange={onFieldChange}/> 
+            </div>
+            <div>
+              <button onClick={onSetDateNow}>Hoy</button>
+            </div>
           </div>
+          <br/>
           <div>
             Ubicación: 
-            lat: <input className="small" name="lat" type="text" onChange={onFieldChange}/>
-            lng: <input className="small" name="lng" type="text" onChange={onFieldChange}/>
-            <button onClick={onSetMyLocation}>Mi ubicación actual</button>
-            <button onClick={onSetMyLocation}>Ubicar en mapa</button>
+            <div>
+              lat: <input className="small" name="lat" type="text" onChange={onFieldChange}/>
+              &nbsp;
+              lng: <input className="small" name="lng" type="text" onChange={onFieldChange}/>    
+            </div>
+            <div>
+              <button onClick={onSetMyLocation}>Mi ubicación actual</button>
+              <button onClick={onSetMyLocation}>Ubicar en mapa</button>
+            </div>
           </div>
-            {/* FALTA SELECTOR DE CATEGORIA */}
+          <br/>
           <div>
             Palabras clave (divide usando comas): <input name="tags" type="text" onChange={onFieldChange}/>
           </div>
         </div>
         <div id="observationAdd">
-          <button>-</button> 
           {/* Agregar colapsador */}
           <button onClick={onAddObservation}>Registrar Observación</button>
         </div>
       </header>
+      <br/>
       <div id="observationContent">
         <header>
           <div>
             <button onClick={onAddSubtitle}>Agrega Subtitulo</button>
-          </div>
-          <div>
+            &nbsp;
             <button onClick={onAddTextArea}>Agrega Parrafo</button>
           </div>
+          <br/>
           <div>
             <input type="text" name="imageUrl" placeholder="url" onChange={onFieldChange}/>
+            {' o '}
             <input type="file" name="imageFile" onChange={onFieldChange}/>
             <button onClick={onAddImage}>Agrega imagen</button>
           </div>
+          <br/>
           <div>
             <input type="text" name="videoUrl" onChange={onFieldChange}/>
             <button onClick={onAddVideo}>Agrega video</button>

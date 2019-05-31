@@ -1,0 +1,8 @@
+.ObservationDetail {
+    display: flex;
+    flex-direction: column;
+}
+
+.ObservationDetail img {
+    max-width: 500px;
+}

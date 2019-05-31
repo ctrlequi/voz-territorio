@@ -11,6 +11,15 @@
 #map-container .marker {
   width: 10px;
   height: 10px;
-  background-color: rgb(155, 193, 228);
+  background-color: rgb(190, 86, 159);
+  border-radius: 50%;
+}
+#map-container .popup {
+  display: flex;
+}
+
+#map-container .popupThumb img {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }

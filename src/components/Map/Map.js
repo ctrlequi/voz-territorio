@@ -53,7 +53,7 @@ class Map extends Component {
   render() {
     
     if (this.state.redirect) {
-      return <Redirect to={`/observation/${this.state.popup.id}`} />
+      return <Redirect to={`/observations/${this.state.popup.id}`} />
     }
 
     const viewport = this.state.viewport
@@ -79,7 +79,7 @@ class Map extends Component {
       console.log('state pop', this.state.popup)
       
       let obs = this.state.popup
-      let thumb = obs.contents.find()
+      let thumb = obs.contents.find(cont => cont.type === 'image')
 
       popup = (
         <Popup 
@@ -88,11 +88,14 @@ class Map extends Component {
           offsetLeft={-20}
           offsetTop={-10}
         >
-          <div onClick={() => this.goToObservationDetails(obs)}>
-            <div class="popupThumb">
-              <img src={obs.contents.find()} alt=""/>
-            </div>
-            <div class="popupTitle">
+          <div className="popup" onClick={() => this.goToObservationDetails(obs)}>
+            {
+              thumb && 
+              <div className="popupThumb">
+                <img src={thumb.imageUrl} alt=""/>
+              </div>
+             }
+            <div className="popupTitle">
               {obs.title}
             </div>
           </div>
