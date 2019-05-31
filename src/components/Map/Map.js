@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
 import { Redirect } from 'react-router-dom'
-import ReactMapGL, { Popup, Marker }from 'react-map-gl'
+import ReactMapGL, { FlyToInterpolator, Popup, Marker }from 'react-map-gl'
 import { connect } from "react-redux"
 
 import style from './Map.css'
@@ -23,6 +23,16 @@ class Map extends Component {
     this.setState({viewport: etc})
   } 
 
+  handleFly = ({longitude, latitude}) => {
+    this.onViewportChange({
+      longitude,
+      latitude,
+      zoom: 11,
+      transitionInterpolator: new FlyToInterpolator(),
+      transitionDuration: 3000
+    });
+  };
+
   showPop = (obs) => {
     
     if ( !! obs ) {
@@ -40,6 +50,8 @@ class Map extends Component {
       })
     
     }
+
+    this.handleFly({latitude: obs.lat,longitude: obs.lng})
 
   }
 
@@ -110,6 +122,7 @@ class Map extends Component {
         <ReactMapGL
           height="100%"
           width="100%"
+          pitch= "60"
           mapStyle="mapbox://styles/mapbox/outdoors-v9"
           {...viewport}
           mapboxApiAccessToken={this.state.accessToken}
