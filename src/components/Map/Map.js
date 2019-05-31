@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 
-import style from './Map.css'
+import { Redirect } from 'react-router-dom'
+import ReactMapGL, { Popup, Marker }from 'react-map-gl'
+import { connect } from "react-redux"
 
-import ReactMapGL, { Popup, Marker }from 'react-map-gl';
-import { connect } from "react-redux";
+import style from './Map.css'
 
 class Map extends Component {
 
@@ -23,28 +24,40 @@ class Map extends Component {
   } 
 
   showPop = (obs) => {
-    console.log('showPopup');
     
     if ( !! obs ) {
-      console.log('yes')
+
+      console.log('obs popup', obs)
+
       this.setState({
-        popup: <Popup  latitude={parseFloat(obs.lat)} longitude={parseFloat(obs.lng)} offsetLeft={-20} offsetTop={-10}>
-        <div onClick={() => this.goToObservationDetails(obs)}>{obs.title}</div>
-      </Popup>
+        popup: obs
       })
+
     } else {
+      
       this.setState({
         popup: null
       })
+    
     }
+
   }
 
   goToObservationDetails = (obs) => {
-    console.log('asd')
+    console.log('goToObservationDetails', obs)
+    this.setState({
+      redirect: this.state.popup.id
+    })
   } 
 
   render() {
+    
+    if (this.state.redirect) {
+      return <Redirect to={`/observation/${this.state.popup.id}`} />
+    }
+
     const viewport = this.state.viewport
+    
     const puntos = this.props.observations.map(obs => {
       return (
         <Marker 
@@ -58,6 +71,36 @@ class Map extends Component {
         </Marker>
       )
     })
+
+    let popup = null
+
+    if (!! this.state.popup) {
+
+      console.log('state pop', this.state.popup)
+      
+      let obs = this.state.popup
+      let thumb = obs.contents.find()
+
+      popup = (
+        <Popup 
+          latitude={parseFloat(obs.lat)}
+          longitude={parseFloat(obs.lng)}
+          offsetLeft={-20}
+          offsetTop={-10}
+        >
+          <div onClick={() => this.goToObservationDetails(obs)}>
+            <div class="popupThumb">
+              <img src={obs.contents.find()} alt=""/>
+            </div>
+            <div class="popupTitle">
+              {obs.title}
+            </div>
+          </div>
+        </Popup>
+      )
+
+    }
+    
     return (
       <div id="map-container">
         <ReactMapGL
@@ -72,7 +115,7 @@ class Map extends Component {
             puntos
           }
           {
-            this.state.pop
+            popup
           }
         </ReactMapGL>
       </div>
