@@ -31,6 +31,7 @@ const AddObservationView = (props) => {
             id={obsCont.id} 
             value={obsCont.text}
             onChange={onContentChange}
+            placeholder="Escribe un párrafo"
           /> 
         </div>
         break;
@@ -41,6 +42,7 @@ const AddObservationView = (props) => {
             className="subtitle" 
             value={obsCont.text}
             onChange={onContentChange}
+            placeholder="Escribe un subtítulo"
           />
         </div>
         break;
@@ -109,13 +111,10 @@ const AddObservationView = (props) => {
             Palabras clave (divide usando comas): <input name="tags" type="text" onChange={onFieldChange}/>
           </div>
         </div>
-        <div id="observationAdd">
-          {/* Agregar colapsador */}
-          <button onClick={onAddObservation}>Registrar Observación</button>
-        </div>
       </header>
       <br/>
       <div id="observationContent">
+        <div className="mini">Agrega contenido como post de blog</div>
         <header>
           <div>
             <button onClick={onAddSubtitle}>Agrega Subtitulo</button>
@@ -124,22 +123,28 @@ const AddObservationView = (props) => {
           </div>
           <br/>
           <div>
-            <input type="text" name="imageUrl" placeholder="url" onChange={onFieldChange}/>
+            <input type="text" name="imageUrl" placeholder="Pega un URL" onChange={onFieldChange}/>
             {' o '}
             <input type="file" name="imageFile" onChange={onFieldChange}/>
             <button onClick={onAddImage}>Agrega imagen</button>
           </div>
           <br/>
           <div>
-            <input type="text" name="videoUrl" onChange={onFieldChange}/>
+            <input type="text" url="Pega un URL de yu2be" name="videoUrl" onChange={onFieldChange}/>
             <button onClick={onAddVideo}>Agrega video</button>
           </div>
         </header>
+        <div id="observationAdd">
+          {/* Agregar colapsador */}
+          <button onClick={onAddObservation}> ¡REGISTRAR OBSERVACIÓN! </button>
+        </div>
+        <hr/>
         <div id="contents">
           {
             observationContentsPreview
           }
         </div>
+        
       </div>
     </section>
 

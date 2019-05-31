@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
+import request from 'superagent';
+
+
 
 import AddObservationView from './AddObservationView'
 
@@ -30,12 +34,18 @@ class AddObservation extends Component {
 
   handleSetDateNow = () => {
     console.log('setDateNow')
-    
+    this.props.onNotify('En construcción u_u', {autoClose: 1000, type: toast.TYPE.WARNING})
   }
   handleSetMyLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(pos => {
         console.log('mylocation',pos)
+        this.props.onNotify(
+          null,
+          {
+            autoClose: 3000
+          }
+        )
         this.setState({
           lat: pos.coords.latitude,
           lng: pos.coords.longitude
@@ -80,6 +90,8 @@ class AddObservation extends Component {
     })
   }
 
+  
+
   handleAddVideo = () => {
     console.log('addVideo')
     console.log(this.state.videoUrl)
@@ -119,8 +131,25 @@ class AddObservation extends Component {
 
   handleFieldChange = (e) => {
 
+  
+    if (e.target.name === 'imageFile') {
 
-    if (e.target.name === 'videoUrl') {
+      let url = `https://api.cloudinary.com/v1_1/lavozdelterritorio/upload`
+          
+      request.post(url)
+        .field('upload_preset', 'dzwvb9ig')
+        .field('file', e.target.files[0])
+        .field('multiple', true)
+        .end((error, response) => {
+          if (error) console.log("Cloudinary Error:", error)
+          console.log('cloudinary', response)
+          this.setState({
+            imageUrl: response.body.secure_url
+          })
+          this.props.onNotify('Imagen lista para agregar', {autoClose: 2000})
+        })
+
+    } else if (e.target.name === 'videoUrl') {
 
       // TODO agregar vimeo
       if (e.target.value.split('v=')[1]) {
@@ -139,6 +168,10 @@ class AddObservation extends Component {
     }
   }
 
+  handleOpenMap = () => {
+    this.props.onNotify('En construcción u_u', {autoClose: 1000, type: toast.TYPE.WARNING})
+  }
+
   handleAddObservation = () => {
     console.log('addObservation')
     this.props.dispatch({
@@ -155,6 +188,7 @@ class AddObservation extends Component {
       imageFile: this.state.imageFile,
       contents: this.state.observationContents
     })
+    this.props.onNotify('Observación registrada 😎', {type: toast.TYPE.SUCCESS})
     this.setState({
       redirect: true
     })
@@ -168,6 +202,7 @@ class AddObservation extends Component {
       // onContentDelete: this.handleContentDelete,
       // onContentChangePosition: this.handleContentChangePosition,
       onSetDateNow: this.handleSetDateNow,
+      onOpenMap: this.handleOpenMap,
       onSetMyLocation: this.handleSetMyLocation,
       onAddSubtitle: this.handleAddSubtitle,
       onAddTextArea: this.handleAddTextArea,
