@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/voz-territorio/precache-manifest.a7bf943e3559715c1b95ec5cd3aca56b.js"
+  "/voz-territorio/precache-manifest.c99517dba2fa8cc154ccdf6560aa61d2.js"
 );
 
 self.addEventListener('message', (event) => {
