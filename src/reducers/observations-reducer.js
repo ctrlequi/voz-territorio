@@ -16,7 +16,7 @@ function observations (state = defaultObservations, action) {
         imageUrl: action.imageUrl,
         videoUrl: action.videoUrl,
         imageFile: action.imageFile,
-        observationContents: action.observationContents
+        contents: action.observationContents
       }
       return [...state, newObservation]
       

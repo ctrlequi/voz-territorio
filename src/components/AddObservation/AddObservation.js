@@ -144,7 +144,7 @@ class AddObservation extends Component {
       imageUrl: this.state.imageUrl,
       videoUrl: this.state.videoUrl,
       imageFile: this.state.imageFile,
-      observationContents: this.state.observationContents
+      contents: this.state.observationContents
     })
     this.setState({
       redirect: true

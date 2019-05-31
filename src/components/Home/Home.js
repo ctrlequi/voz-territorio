@@ -15,7 +15,7 @@ class Home extends Component {
   
   render() {
     return <div className="Home">
-      <Iframe url="https://ralexrdz.github.io/mongoose-intro/"
+      <Iframe url=" https://ctrlequi.github.io/slides-voz-territorio/"
         width="100%"
         height="100%"
         id="myId"

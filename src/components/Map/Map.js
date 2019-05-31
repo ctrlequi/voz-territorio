@@ -79,7 +79,8 @@ class Map extends Component {
       console.log('state pop', this.state.popup)
       
       let obs = this.state.popup
-      let thumb = obs.contents.find(cont => cont.type === 'image')
+      console.log(obs.contents)
+      let thumb = !!obs.contents && obs.contents.find(cont => cont.type === 'image')
 
       popup = (
         <Popup 
