@@ -39,19 +39,19 @@ class App extends Component {
         <section className="Container">
           <Switch>
             <Route exact path="/" render={(props) =>{
-              return <Home onNotify={this.notify}/>
+              return <Home onNotify={this.notify} {...props}/>
             }}/>
             <Route exact path="/map" render={(props) =>{
-              return <Map onNotify={this.notify}/>
+              return <Map onNotify={this.notify} {...props}/>
             }}/>
             <Route exact path="/register" render={(props) =>{
-              return <Register onNotify={this.notify}/>
+              return <Register onNotify={this.notify} {...props}/>
             }}/>
             <Route exact path="/add-observation" render={(props) =>{
-              return <AddObservation onNotify={this.notify}/>
+              return <AddObservation onNotify={this.notify} {...props}/>
             }}/>
             <Route exact path="/observations/:id" render={(props) =>{
-              return <ObservationDetail onNotify={this.notify}/>
+              return <ObservationDetail onNotify={this.notify} {...props}/>
             }}/>
           </Switch>
         </section>
