@@ -7,6 +7,7 @@ function observations (state = defaultObservations, action) {
     case 'ADD_OBSERVATION':
       
       const newObservation = {
+        id: action.id,
         title: action.title,
         lat: action.lat,
         lng: action.lng,
