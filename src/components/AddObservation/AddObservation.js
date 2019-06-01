@@ -175,6 +175,7 @@ class AddObservation extends Component {
   handleAddObservation = () => {
     console.log('addObservation')
     this.props.dispatch({
+      id: Math.random() * 999999,
       type: 'ADD_OBSERVATION',
       title: this.state.title,
       lat: this.state.lat,
