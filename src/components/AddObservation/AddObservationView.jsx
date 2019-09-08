@@ -138,9 +138,7 @@ const AddObservationView = (props) => {
               <button onClick={onAddVideo}>Agrega video</button>
             </div>
           </header>
-          <div id="observationAdd">
-            <button onClick={onAddObservation}> ¡REGISTRAR OBSERVACIÓN! </button>
-          </div>
+          
         </Panel>
         <Panel header={`Contenidos (${observationContentsPreview.length})`}>
           <div id="contents">
@@ -151,6 +149,9 @@ const AddObservationView = (props) => {
           
         </Panel>
       </Collapse>
+      <div id="observationAdd">
+        <button onClick={onAddObservation}> ¡REGISTRAR OBSERVACIÓN! </button>
+      </div>
     </section>
 
   )

@@ -1,11 +1,9 @@
 import defaultObservations from '../data/observations'
 
 function observations (state = defaultObservations, action) {
-  console.log('state observations', state)
 
   switch (action.type) {
     case 'ADD_OBSERVATION':
-      
       const newObservation = {
         id: action.id,
         title: action.title,
@@ -17,7 +15,7 @@ function observations (state = defaultObservations, action) {
         imageUrl: action.imageUrl,
         videoUrl: action.videoUrl,
         imageFile: action.imageFile,
-        contents: action.observationContents
+        contents: action.contents
       }
       return [...state, newObservation]
       

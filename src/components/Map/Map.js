@@ -37,7 +37,6 @@ class Map extends Component {
     
     if ( !! obs ) {
 
-      console.log('obs popup', obs)
 
       this.setState({
         popup: obs
@@ -56,7 +55,6 @@ class Map extends Component {
   }
 
   goToObservationDetails = (obs) => {
-    console.log('goToObservationDetails', obs)
     this.setState({
       redirect: this.state.popup.id
     })
@@ -88,10 +86,7 @@ class Map extends Component {
 
     if (!! this.state.popup) {
 
-      console.log('state pop', this.state.popup)
-      
       let obs = this.state.popup
-      console.log(obs.contents)
       let thumb = !!obs.contents && obs.contents.find(cont => cont.type === 'image')
 
       popup = (

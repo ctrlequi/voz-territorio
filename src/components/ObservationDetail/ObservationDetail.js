@@ -12,24 +12,14 @@ class ObservationDetail extends Component {
     newId: null,
     redirect: false
   }
-  
-  componentDidMount () {
-    console.log('ObservationDetail Did Mount')
-  }
-
-  componentWillUnmount () {
-    console.log('ObservationDetail Will unMount')
-  }
-    
+ 
   render() {
     
-    console.log(this.props.match)
     
     let observation = this.props.observations.find(obs => {
       return obs.id == this.props.match.params.id
     })
 
-    console.log(observation)
 
     const props = {
       ...observation

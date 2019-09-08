@@ -110,6 +110,7 @@ class AddObservation extends Component {
     
     console.log('handleContentChange', e.target.id)
     const contents = this.state.observationContents
+    console.log('contents', contents)
     contents.find(cont => cont.id == e.target.id).text = e.target.value
     this.setState({
       observationContents: [...contents]
@@ -173,9 +174,9 @@ class AddObservation extends Component {
   }
 
   handleAddObservation = () => {
-    console.log('addObservation')
+    console.log('addObservation', this.state.observationContents)
     this.props.dispatch({
-      id: Math.random() * 999999,
+      id: Math.floor(Math.random() * 999999),
       type: 'ADD_OBSERVATION',
       title: this.state.title,
       lat: this.state.lat,

@@ -16,9 +16,12 @@ const ObservationDetailView = (props) => {
     contents
   } = {...props}
 
-  const contentElements = contents.map(c => {
+  const contentElements = ! contents ? [] : contents.map(c => {
+    console.log('content', c)
     if (
-      c.type === 'image' && (
+      c.type === 'image' &&
+      c.imageUrl &&
+      (
         c.imageUrl.indexOf('.mov') ||
         c.imageUrl.indexOf('.mp4')
       )
@@ -32,7 +35,7 @@ const ObservationDetailView = (props) => {
         return <p key={c.id}>c.text</p>
       case 'image':
         return <div key={c.id}>
-          <img src={c.imageUrl} alt=""/>
+          <img src={c.imageUrl ? c.imageUrl : c.url} alt=""/>
         </div>
       case 'video':
         return <div key={c.id}>

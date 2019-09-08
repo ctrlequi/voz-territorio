@@ -13,14 +13,6 @@ class Register extends Component {
     redirect: false
   }
   
-  componentDidMount () {
-    console.log('Register Did Mount')
-  }
-
-  componentWillUnmount () {
-    console.log('Register Will unMount')
-  }
-
   handleNameChange = (e) => {
     this.setState({
       name: e.target.value
