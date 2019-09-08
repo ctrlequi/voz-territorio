@@ -39,7 +39,7 @@ class Register extends Component {
   }
   
   render() {
-    if (this.state.redirect) return <Redirect to="/"/>
+    if (this.state.redirect) return <Redirect to="/add-observation"/>
     const props = {
       name: this.state.name,
       onNameChange: this.handleNameChange,

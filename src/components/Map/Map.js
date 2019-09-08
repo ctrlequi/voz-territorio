@@ -122,7 +122,7 @@ class Map extends Component {
         <ReactMapGL
           height="100%"
           width="100%"
-          pitch= "60"
+          pitch={60}
           mapStyle="mapbox://styles/mapbox/outdoors-v9"
           {...viewport}
           mapboxApiAccessToken={this.state.accessToken}

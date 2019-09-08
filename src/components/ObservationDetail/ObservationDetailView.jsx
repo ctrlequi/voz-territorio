@@ -1,6 +1,8 @@
 import React from "react"
 
 import style from "./ObservationDetail.css";
+import "../../../node_modules/video-react/dist/video-react.css";
+import { Player } from 'video-react';
 
 const ObservationDetailView = (props) => {
   const {
@@ -15,39 +17,37 @@ const ObservationDetailView = (props) => {
   } = {...props}
 
   const contentElements = contents.map(c => {
+    if (
+      c.type === 'image' && (
+        c.imageUrl.indexOf('.mov') ||
+        c.imageUrl.indexOf('.mp4')
+      )
+    ) {
+      c.type = 'video'
+    }
     switch (c.type) {
       case 'subtitle':
-        return <h3>c.text</h3>
-        break;
+        return <h3 key={c.id}>c.text</h3>
       case 'paragraph':
-        return <p>c.text</p>
-        break;
+        return <p key={c.id}>c.text</p>
       case 'image':
-        return <div>
+        return <div key={c.id}>
           <img src={c.imageUrl} alt=""/>
         </div>
-        break;
       case 'video':
         return <div key={c.id}>
-          <iframe
-            title="video"
-            width="560"
-            height="315"    
-            src={c.url}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <Player
+            playsInline
+            autoPlay
+            src={c.url ? c.url : c.imageUrl}
+          />
         </div>
-        break;
       case 'link':
-        return <div>
+        return <div key={c.id}>
           <a href={c.url}>{c.text}</a>
         </div>
-        break;
-    
       default:
-        break;
+        return null;
     }
   })
 

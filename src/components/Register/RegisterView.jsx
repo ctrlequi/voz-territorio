@@ -9,8 +9,13 @@ const RegisterView = (props) => {
     addPerson
   } = {...props}
   return <div className="Register">
-    <input type="text" onChange={onNameChange} value={name} />
-    <button onClick={addPerson}>Registrsar</button>
+    <p>
+      Ingresa tu nombre o apodo para registrar observaciones bajo ese alias
+    </p>
+    <input placeholder="Escribe tu nombre" type="text" onChange={onNameChange} value={name} />
+    <br/>
+    <br/>
+    <button onClick={addPerson}>¡Regístrame!</button>
   </div>
 }
 

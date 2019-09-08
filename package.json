@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.1",
+    "granim": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-iframe": "^1.8.0",
@@ -14,7 +15,8 @@
     "react-scripts": "3.0.1",
     "react-toastify": "^5.2.1",
     "redux": "^4.0.1",
-    "superagent": "^5.0.5"
+    "superagent": "^5.0.5",
+    "video-react": "^0.14.1"
   },
   "scripts": {
     "start": "react-scripts start",

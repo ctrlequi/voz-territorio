@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Granim from 'granim'
 import { connect } from 'react-redux'
 import {HashRouter, Switch, Route, Link} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,6 +15,22 @@ import ObservationDetail from './components/ObservationDetail/ObservationDetail'
 
 class App extends Component {
 
+  componentDidMount () {
+    var granimInstance = new Granim({
+      element: '#header-animado',
+      name: 'granim',
+      opacity: [1, 1],
+      states : {
+          "default-state": {
+              gradients: [
+                  ['#cf5814', '#1CD8D2'],
+                  ['#08095f', '#770581']
+              ]
+          }
+      }
+    })
+  }
+
   notify = (msg, options) => {
     toast(msg, options)
   };
@@ -26,6 +43,7 @@ class App extends Component {
         <ToastContainer/>
         <div className="App">
         <header>
+          <canvas id="header-animado"></canvas>
           <Link to="/"> Home </Link>
           <Link to="/map"> Map </Link>
           {
@@ -34,7 +52,7 @@ class App extends Component {
             :
               <Link to="/profile"> Perfil de {this.props.user.name} </Link> 
           }
-          <Link to="/add-observation"> Nueva observación </Link>
+          <Link to="/add-observation"> + Observación </Link>
         </header>
         <section className="Container">
           <Switch>
