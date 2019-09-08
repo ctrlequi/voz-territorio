@@ -27,8 +27,15 @@
   justify-content: center;
   font-style: oblique;
   font-weight: bold;
+  padding: 10px;
 }
 
 .App .Container {
   margin-top: 50px; 
+}
+
+.App .color {
+  color: #0c3197;
+  color: #1CD8D2;
+  color: #28206d;
 }

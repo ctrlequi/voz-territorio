@@ -1,6 +1,12 @@
 import React from "react"
 
 import style from "./AddObservation.css";
+import '../../../node_modules/rc-collapse/assets/index.css'
+import Collapse from 'rc-collapse'
+
+var Panel = Collapse.Panel;
+
+
 
 const AddObservationView = (props) => {
   const {
@@ -76,8 +82,8 @@ const AddObservationView = (props) => {
 
   return (
     <section className="AddObservation">
-      <header>
-        <div id="observationInfo">
+      <Collapse accordion={true}>
+        <Panel header="Info general" id="observationInfo">
           <div>
             Titulo: <input name="title" type="text" onChange={onFieldChange}/>
           </div>
@@ -110,42 +116,41 @@ const AddObservationView = (props) => {
           <div>
             Palabras clave (divide usando comas): <input name="tags" type="text" onChange={onFieldChange}/>
           </div>
-        </div>
-      </header>
-      <br/>
-      <div id="observationContent">
-        <div className="mini">Agrega contenido como post de blog</div>
-        <header>
-          <div>
-            <button onClick={onAddSubtitle}>Agrega Subtitulo</button>
-            &nbsp;
-            <button onClick={onAddTextArea}>Agrega Parrafo</button>
+        </Panel>
+        <Panel header="Agrega nueva seccion" id="observationContent">
+          <div className="mini">Agrega contenido como post de blog</div>
+          <header>
+            <div>
+              <button onClick={onAddSubtitle}>Agrega Subtitulo</button>
+              &nbsp;
+              <button onClick={onAddTextArea}>Agrega Parrafo</button>
+            </div>
+            <br/>
+            <div>
+              <input type="text" name="imageUrl" placeholder="Pega un URL" onChange={onFieldChange}/>
+              {' o '}
+              <input type="file" name="imageFile" onChange={onFieldChange}/>
+              <button onClick={onAddImage}>Agrega imagen</button>
+            </div>
+            <br/>
+            <div>
+              <input type="text" url="Pega un URL de yu2be" name="videoUrl" onChange={onFieldChange}/>
+              <button onClick={onAddVideo}>Agrega video</button>
+            </div>
+          </header>
+          <div id="observationAdd">
+            <button onClick={onAddObservation}> ¡REGISTRAR OBSERVACIÓN! </button>
           </div>
-          <br/>
-          <div>
-            <input type="text" name="imageUrl" placeholder="Pega un URL" onChange={onFieldChange}/>
-            {' o '}
-            <input type="file" name="imageFile" onChange={onFieldChange}/>
-            <button onClick={onAddImage}>Agrega imagen</button>
+        </Panel>
+        <Panel header={`Contenidos (${observationContentsPreview.length})`}>
+          <div id="contents">
+            {
+              observationContentsPreview
+            }
           </div>
-          <br/>
-          <div>
-            <input type="text" url="Pega un URL de yu2be" name="videoUrl" onChange={onFieldChange}/>
-            <button onClick={onAddVideo}>Agrega video</button>
-          </div>
-        </header>
-        <div id="observationAdd">
-          {/* Agregar colapsador */}
-          <button onClick={onAddObservation}> ¡REGISTRAR OBSERVACIÓN! </button>
-        </div>
-        <hr/>
-        <div id="contents">
-          {
-            observationContentsPreview
-          }
-        </div>
-        
-      </div>
+          
+        </Panel>
+      </Collapse>
     </section>
 
   )

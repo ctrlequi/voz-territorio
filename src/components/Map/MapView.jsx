@@ -15,7 +15,8 @@ const MapView = (props) => {
       longitude: -122.4376,
       zoom: 8
     }
-    return <ReactMapGL
+    return <ReactMapGL 
+      className="Map"
       {...viewport}
       onViewportChange={(viewport) => this.setState({viewport})}
     />

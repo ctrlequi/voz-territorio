@@ -1,8 +1,12 @@
 .AddObservation {
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.AddObservation .rc-collapse,
+.AddObservation .rc-collapse-item {
+  width: 100%;
 }
 
 .AddObservation * {

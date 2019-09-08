@@ -14,6 +14,7 @@
   background-color: rgb(190, 86, 159);
   border-radius: 50%;
 }
+
 #map-container .popup {
   display: flex;
 }

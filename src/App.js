@@ -16,15 +16,15 @@ import ObservationDetail from './components/ObservationDetail/ObservationDetail'
 class App extends Component {
 
   componentDidMount () {
-    var granimInstance = new Granim({
+    new Granim({
       element: '#header-animado',
       name: 'granim',
       opacity: [1, 1],
       states : {
           "default-state": {
               gradients: [
-                  ['#cf5814', '#1CD8D2'],
-                  ['#08095f', '#770581']
+                  ['#0c3197','#1CD8D2'],
+                  ['#1CD8D2','#28206d']
               ]
           }
       }
@@ -52,7 +52,7 @@ class App extends Component {
             :
               <Link to="/profile"> Perfil de {this.props.user.name} </Link> 
           }
-          <Link to="/add-observation"> + Observación </Link>
+          <Link className="no-flex" to="/add-observation"> +Observación </Link>
         </header>
         <section className="Container">
           <Switch>
