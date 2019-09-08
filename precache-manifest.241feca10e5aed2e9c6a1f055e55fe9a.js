@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "340f22c593881bd223105f7e943d1405",
+    "revision": "5223df6ceb4616037974929aef3c1b02",
     "url": "/voz-territorio/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voz-territorio/static/css/2.7912108a.chunk.css"
   },
   {
-    "revision": "f742d816c15c1dbb704b",
+    "revision": "7607060e5bad15f8ca7a",
     "url": "/voz-territorio/static/css/main.fff63c70.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voz-territorio/static/js/2.c7d7260d.chunk.js"
   },
   {
-    "revision": "f742d816c15c1dbb704b",
-    "url": "/voz-territorio/static/js/main.90c11507.chunk.js"
+    "revision": "7607060e5bad15f8ca7a",
+    "url": "/voz-territorio/static/js/main.020fe2c0.chunk.js"
   },
   {
     "revision": "adc4a36802fe19f293bc",
