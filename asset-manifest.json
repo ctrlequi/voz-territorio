@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/voz-territorio/static/css/main.a6315618.chunk.css",
-    "main.js": "/voz-territorio/static/js/main.6ed9bc30.chunk.js",
-    "main.js.map": "/voz-territorio/static/js/main.6ed9bc30.chunk.js.map",
+    "main.css": "/voz-territorio/static/css/main.fff63c70.chunk.css",
+    "main.js": "/voz-territorio/static/js/main.90c11507.chunk.js",
+    "main.js.map": "/voz-territorio/static/js/main.90c11507.chunk.js.map",
     "runtime~main.js": "/voz-territorio/static/js/runtime~main.26685c72.js",
     "runtime~main.js.map": "/voz-territorio/static/js/runtime~main.26685c72.js.map",
-    "static/css/2.f5f0c74c.chunk.css": "/voz-territorio/static/css/2.f5f0c74c.chunk.css",
-    "static/js/2.384a9753.chunk.js": "/voz-territorio/static/js/2.384a9753.chunk.js",
-    "static/js/2.384a9753.chunk.js.map": "/voz-territorio/static/js/2.384a9753.chunk.js.map",
+    "static/css/2.7912108a.chunk.css": "/voz-territorio/static/css/2.7912108a.chunk.css",
+    "static/js/2.c7d7260d.chunk.js": "/voz-territorio/static/js/2.c7d7260d.chunk.js",
+    "static/js/2.c7d7260d.chunk.js.map": "/voz-territorio/static/js/2.c7d7260d.chunk.js.map",
     "index.html": "/voz-territorio/index.html",
-    "precache-manifest.900f2e45ea316319f17dab5753bfed20.js": "/voz-territorio/precache-manifest.900f2e45ea316319f17dab5753bfed20.js",
+    "precache-manifest.bd08a7f26c4a07c1036557581f66f1be.js": "/voz-territorio/precache-manifest.bd08a7f26c4a07c1036557581f66f1be.js",
     "service-worker.js": "/voz-territorio/service-worker.js",
-    "static/css/2.f5f0c74c.chunk.css.map": "/voz-territorio/static/css/2.f5f0c74c.chunk.css.map",
-    "static/css/main.a6315618.chunk.css.map": "/voz-territorio/static/css/main.a6315618.chunk.css.map"
+    "static/css/2.7912108a.chunk.css.map": "/voz-territorio/static/css/2.7912108a.chunk.css.map",
+    "static/css/main.fff63c70.chunk.css.map": "/voz-territorio/static/css/main.fff63c70.chunk.css.map"
   }
 }
